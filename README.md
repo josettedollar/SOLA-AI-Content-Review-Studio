@@ -1,6 +1,10 @@
 
 # ☀️ SOLA | AI Content Review Studio
+## Try SOLA Live
 
+[☀️ Launch SOLA | AI Content Review Studio](https://josettedollar-sola-ai-content-review-studio-app-fp8l18.streamlit.app)
+
+Demo password required for access.
 SOLA is an AI-assisted marketing content review application built with Python, Streamlit, and the OpenAI API.
 
 ## The Problem
