@@ -18,6 +18,35 @@ st.set_page_config(
     layout="wide"
 )
 
+# Require a password before allowing access to SOLA.
+
+# Password-protected access to SOLA
+import hmac
+
+demo_password = os.getenv("SOLA_DEMO_PASSWORD")
+
+if not demo_password:
+    st.error("Demo access is not configured.")
+    st.stop()
+
+if "authenticated" not in st.session_state:
+    st.session_state["authenticated"] = False
+
+if not st.session_state["authenticated"]:
+    entered_password = st.text_input(
+        "Enter demo password",
+        type="password"
+    )
+
+    if entered_password:
+        if hmac.compare_digest(entered_password, demo_password):
+            st.session_state["authenticated"] = True
+            st.rerun()
+        else:
+            st.error("Incorrect password.")
+
+    st.stop()
+
 
 st.title("☀️ SOLA")
 st.subheader("AI Content Review Studio")
