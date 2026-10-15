@@ -1,0 +1,14 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.streamlit/secrets.toml
+venv/
+
+# Local development backups
+app_backup.py
+app_working.py
+app_stable.py
+app_functional.py
+app copy.py
+app copy 2.py
